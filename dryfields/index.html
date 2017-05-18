@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Dymen Dryfields</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="./style/style.css" rel="stylesheet">
+
+        <script src="./tools/jquery-3.2.1.js"></script>
+        <script src="./tools/EventEmitter.js"></script>
+        <script src="./controllers/GameController.js"></script>
+        <script src="./models/Game.js"></script>
+        <script src="./views/GameView.js"></script>
+        <script src="./views/ScoreView.js"></script>
+        <script src="./dryfields.js"></script>
+        <script type="text/javascript"></script>
+
+    </head>
+    <body>
+
+        <h1>Dryfields by Dymen</h1>
+
+        <nav>
+            <button id="scores">Scores</button>
+                <h3><b>Classement</b></h3>
+                    <table border="">
+                        <thead>
+                            <tr>
+                                <th id="rank">Rang</th>
+                                <th id="players">Joueurs</th>
+                                <th id="scor">Scores</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+            <div class="Stats">
+                <div><span id="recoltes"></span><img src="images/blé.jpg"></div>
+                <div><span id="argent"></span><img src="images/money.png"></div>
+                <div><span id="eau"></span><img src="images/water.jpg"></div>
+            </div>
+
+            <div>
+                <div id="play" class="btn disabled">Play</div>
+                <div id="scores_link" class="btn disabled">Box scores</div>
+            </div>
+        </nav>
+
+        <section class="main">
+            <section>
+                <div id="warnings"></div>
+                <div class="btn disabled" id="buyWater_link">Buy water</div>
+                <div id="stopWatch"></div>
+            </section>
+
+            <section class="champs">
+                <div class="champ">
+                    <div class="btn disabled" id="i1">Irriguer</div>
+                    <div>
+                        <canvas id="tank1" width="204" height="204"></canvas>
+                        <canvas id="mat1" width="204" height="204"></canvas>
+                    </div>
+                    <div class="btn disabled" id="r1">Récolter</div>
+                </div>
+
+                <div class="champ">
+                    <div class="btn disabled " id="i2">Irriguer</div>
+                    <div>
+                        <canvas id="tank2"></canvas>
+                        <canvas id="mat2"></canvas>
+                    </div>
+                    <div class="btn disabled" id="r2">Récolter</div>
+                </div>
+
+                <div class="champ">
+                    <div class="btn disabled" id="i3">Irriguer</div>
+                    <div>
+                        <canvas id="tank3"></canvas>
+                        <canvas id="mat3"></canvas>
+                    </div>
+                    <div class="btn disabled" id="r3">Récolter</div>
+                </div>
+            </section>
+
+            <section class="champs">
+                <fieldset> <legend>Champ 1</legend>
+                    <table>
+                        <tr> <td>Conso°:</td>	<td id="consumption1"></td>	</tr>
+                        <tr> <td>Eau:</td>		<td id="water1"></td>		</tr>
+                        <tr> <td>Maturité:</td>	<td id="maturity1"></td>	</tr>
+                    </table>
+                </fieldset>
+
+                <fieldset> <legend>Champ 2</legend>
+                    <table>
+                        <tr> <td>Conso°:</td>	<td id="consumption2"></td>	</tr>
+                        <tr> <td>Eau:</td>		<td id="water2"></td>		</tr>
+                        <tr> <td>Maturité:</td>	<td id="maturity2"></td>	</tr>
+                    </table>
+                </fieldset>
+
+                <fieldset> <legend>Champ 3</legend>
+                    <table>
+                        <tr> <td>Conso°:</td>	<td id="consumption3"></td>	</tr>
+                        <tr> <td>Eau:</td>		<td id="water3"></td>		</tr>
+                        <tr> <td>Maturité:</td>	<td id="maturity3"></td>	</tr>
+                    </table>
+                </fieldset>
+            </section>
+
+        </section>
+
+        <div id="overlay">
+
+            <button id="popin-eau">Acheter de l'eau</button>
+
+            <section id="achat-eau">
+                <form id="menu-achat">
+                    <input type="number" name="quantity" id="eau-qty">
+                    <input type="submit" name="buy" value="Acheter">
+                </form>
+            </section>
+
+        </div>
+
+    <script src="libs/jquery-2.2.1.min.js"></script>
+    <script src="libs/waterbubble.min.js"></script>
+    <script src="libs/TimeCircles.js"></script>
+    <script src="libs/DataTable/datatables.min.js"></script>
+    <!-- <script src="libs/socket.io.min.js"></script>
+    <script>
+    var socket = io('http://10.1.256:8080');
+    socket.on('newScore', function (data) {
+        console.log('WS reçu', data);
+    });
+    </script> -->
+    <script src="utils/packaging.js"></script>
+    <script src="utils/utils.js"></script>
+    <script src="utils/observer.js"></script>
+    <script src="utils/observable.js"></script>
+    <script src="model.js"></script>
+    <script src="champs.js"></script>
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
+    <script src="main.js"></script>
+    <script src="launcher.js"></script>
+
+    </body>
+</html>

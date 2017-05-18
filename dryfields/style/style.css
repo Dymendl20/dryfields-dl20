@@ -1,0 +1,18 @@
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background-color: lawngreen;
+    border-color: red;
+}
+input[type="text"]:disabled {
+    background: #dddddd;
+}
+
+body {
+    margin: 0;
+}
+
+img{
+    border-image-width: 50px;
+}
